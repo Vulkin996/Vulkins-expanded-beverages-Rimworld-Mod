@@ -80,7 +80,7 @@
     <graphicData>
       <texPath>Things/Items/Drug/VulkinsCoffee</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
-      <drawSize>0.4</drawSize>
+      <drawSize>1.0</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
     <stackLimit>75</stackLimit>
