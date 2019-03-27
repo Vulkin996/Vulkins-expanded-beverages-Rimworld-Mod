@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>BerryJuice</defName>
+    	<label>berry juice</label>
+    	<description>A delicious drink made of berries mixed together with sugar and flavorings. It fulfills the need for recreation, but it is not very nutritious. It can be fermented into berry wine.</description>
+    	<graphicData>
+     		<texPath>Things/Items/Drinks/BerryJuice</texPath>
+     		<graphicClass>Graphic_StackCount</graphicClass>
+      		<drawSize>0.88</drawSize>
+    	</graphicData>
+    	<rotatable>false</rotatable>
+    	<stackLimit>25</stackLimit>
+    	<soundInteract>Standard_Drop</soundInteract>
+    	<soundDrop>Standard_Drop</soundDrop>
+    	<socialPropernessMatters>false</socialPropernessMatters>
+    	<statBases>
+          <MaxHitPoints>40</MaxHitPoints>
+      		<DeteriorationRate>0.5</DeteriorationRate>
+      		<MarketValue>5</MarketValue>
+      		<Mass>0.2</Mass>
+      		<Flammability>0.2</Flammability>
+      		<Nutrition>0.03</Nutrition>
+    	</statBases>
+      <thingCategories>
+        <li>Foods</li>
+      </thingCategories>
+    	<ingestible>
+    	   <preferability>DesperateOnly</preferability>
+      	 <foodType>Fluid, Processed</foodType>
+      	 <joyKind>Gluttonous</joyKind>
+      	 <joy>0.12</joy>
+         <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      	 <nurseable>true</nurseable>
+     		 <ingestSound>Ingest_Beer</ingestSound>
+      	 <ingestHoldOffsetStanding>
+            <northDefault>
+          		<offset>(0.18,0,0)</offset>
+        	  </northDefault>
+      	 </ingestHoldOffsetStanding>
+     		 <ingestCommandString>Drink {0}</ingestCommandString>
+      	 <ingestReportString>Drinking {0}.</ingestReportString>
+      	 <chairSearchRadius>25</chairSearchRadius>
+    	</ingestible>
+	</ThingDef>
+
+  <RecipeDef>
+    <defName>Make_Berry_Juice</defName>
+    <label>make berry juice</label>
+    <description>Make juice from berries.</description>
+    <jobString>Making berry juice.</jobString>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>300</workAmount>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawBerries</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RawHops</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BerryJuice>5</BerryJuice>
+    </products>
+    <recipeUsers>
+        <li>Brewery</li>
+      </recipeUsers>
+  </RecipeDef>
+
+</Defs>
